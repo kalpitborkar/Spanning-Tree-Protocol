@@ -12,7 +12,7 @@ To run the simulation:
 - First line suggests the trace flag.
 - Second line suggests the number of bridges in the topology.
 - Each of the next lines suggest the bridges B1, B2, B3... and the corresponding LAN segments.
-### Sameple input
+### Sample input
 ```
 05
 B1: A G B
@@ -24,6 +24,19 @@ B5: C D E
 Where A, B, C, etc. are the LANs.
 
 ## Output format
+- Each line suggests the name of the bridge (B1, B2, etc.) and the state of each port.
+- DP: Designated Port
+- RP: Root Port
+- NP: Null Port
+
+### Sample output
+```
+B1: A-DP B-DP G-DP
+B2: F-DP G-RP
+B3: B-RP C-DP
+B4: C-NP E-DP F-RP
+B5: C-RP D-DP E-NP
+```
 
 
 
