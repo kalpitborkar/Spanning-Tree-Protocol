@@ -39,4 +39,15 @@ B5: C-RP D-DP E-NP
 ```
 
 
+## Trace format
+```
+t s|r Bk (Bi, d, Bj)
+```
+Where:
+- t:           Time of the event
+- Bk:          ID of the node at which the event has happened
+- s/r:         Send or Receive event
+- (Bi, d, Bj): Message indicating that Bridge Bj thinks Bridge Bi is the root and it is at a distance d from the root.
+
+
 
