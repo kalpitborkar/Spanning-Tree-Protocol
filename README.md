@@ -49,5 +49,8 @@ Where:
 - s/r:         Send or Receive event
 - (Bi, d, Bj): Message indicating that Bridge Bj thinks Bridge Bi is the root and it is at a distance d from the root.
 
-
+## References
+- https://www.researchgate.net/publication/238778689_An_Algorithm_for_Distributed_computation_of_a_Spanning_Tree_in_an_Extended_LAN
+- https://en.wikipedia.org/wiki/Spanning_Tree_Protocol
+- https://www.youtube.com/watch?v=japdEY1UKe4&ab_channel=CertBros
 
