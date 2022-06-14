@@ -2,11 +2,10 @@
 
 void bridgesim::simulateSTP()
 {
-    // bool stop = false;
     int time = 0;
     bool did_bridges_update = true;
 
-    while (did_bridges_update) //todo - decide the looping condition
+    while (did_bridges_update)
     {
         std::vector<configMessage> store_message_sent, store_message_received;
 
@@ -17,14 +16,6 @@ void bridgesim::simulateSTP()
 
             lans_connected_to_current_bridge = bridge_lan_map[current_bridge.bridge_id];
 
-            // for (int j = 0; j < 26; j++)
-            // {
-            //     if (current_bridge.connected_ports[j])
-            //     {
-            //         lans_connected_to_current_bridge.push_back(j);
-            //     }
-            // }
-
             for (int j = 0; j < lans_connected_to_current_bridge.size(); j++)
             {
                 if (current_bridge.port_status[lans_connected_to_current_bridge[j]] == "DP")
@@ -34,9 +25,7 @@ void bridgesim::simulateSTP()
 
 
                     for (int k = 0; k < this->lan_bridge_map[lans_connected_to_current_bridge[j]].size(); k++)
-                    {
-                        // bridge *temp = &this->all_bridges[lan_bridge_map[lans_connected_to_current_bridge[j]][k]];
-                        
+                    {                        
                         int temp_int;
                         for (int s = 0; s < all_bridges.size(); s++)
                         {
@@ -56,15 +45,6 @@ void bridgesim::simulateSTP()
                     }
                 }
             }
-
-            // for (int j = 0; j < lans_connected_to_current_bridge.size(); j++)
-            // {
-            //     if (current_bridge.port_status[lans_connected_to_current_bridge[j]] == "DP")
-            //     {
-            //         configMessage sending_msg(current_bridge.distance_from_root_bridge, time, current_bridge.root_bridge_id, current_bridge.bridge_id, current_bridge.bridge_id, 's', lans_connected_to_current_bridge[j]);
-            //         store_message_sent.push_back(sending_msg);
-            //     }
-            // }
         }
 
         did_bridges_update = false;
@@ -107,21 +87,6 @@ void bridgesim::simulateSTP()
 
 void bridgesim::update_network()
 {
-    // for (int i = 0; i < all_bridges.size(); i++)
-    // {
-    //     all_bridges[i].update_active_ports();
-
-    //     // for (int j = 0; j < all_bridges[i].active_ports.size(); j++)
-    //     // {
-    //     //     this->lan_to_active_bridges[j].push_back(i);
-    //     // }
-
-    //     for(auto iterator = all_bridges[i].active_ports.begin();iterator!=all_bridges[i].active_ports.end();iterator++)
-    //     {
-    //         this->lan_to_active_bridges[*iterator].push_back(all_bridges[i].bridge_id);
-    //     }
-    // }
-
     for(auto i = this->bridge_id_to_obj.begin();i!=bridge_id_to_obj.end();i++)
     {
         (i->second).update_active_ports();
