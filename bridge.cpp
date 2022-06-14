@@ -72,7 +72,6 @@ bool bridge::receive(configMessage m)
     {
         if (this->root_bridge_id > m.Bi) //identifies root with smaller id (rule 1)
         {
-            // std::cout<<"Bi: "<<m.Bi<<" "<<"root_bridge_id: "<<this->root_bridge_id<<std::endl;
             this->is_root_bridge = false;                             //not a root bridge anymore
             this->distance_from_root_bridge = m.distance_to_root + 1; //updating the distance from root bridge
             this->root_bridge_id = m.Bi;                              //updating the root bridge id
@@ -119,25 +118,8 @@ bool bridge::receive(configMessage m)
             this->root_lan = m.lan;                                   //setting the root lan
             this->sending_bridge_id = m.Bj;
 
-            // std::cout<<"message: "<<m.Bi<<" "<<m.Bj<<" "<<m.Bk<<" "<<m.distance_to_root<<std::endl;
-            // std::cout<<"bridge: "<<this->bridge_id<<" "<<this->distance_from_root_bridge<<" "<<this->root_bridge_id<<" "<<this->sending_bridge_id<<" "<<this->root_lan<<" "<<this->root_port<<std::endl;
-            // std::cout<<std::endl;
-
-
             return true; //updated
         }
-
-        // else if (
-        //     ((this->distance_from_root_bridge > m.distance_to_root) ||
-        //      (this->bridge_id > m.Bj && m.distance_to_root == this->distance_from_root_bridge)) &&
-        //     (this->root_bridge_id = m.Bi) && (this->port_status[m.lan] != "NP") && (this->port_status[m.lan] != "RP"))
-
-        // else if(
-        //     ((this->distance_from_root_bridge > m.distance_to_root) || (this->bridge_id > m.Bj && m.distance_to_root == this->distance_from_root_bridge)) && (this->port_status[m.lan] != "RP")&& (this->port_status[m.lan] != "NP")&& (this->root_bridge_id == m.Bi)
-        // )
-        // && (this->port_status[m.lan] != "RP")
-        // && (this->port_status[m.lan] != "NP")
-        // && (this->root_bridge_id == m.Bi)
 
         else if (
             ((m.distance_to_root < this->distance_from_root_bridge) || (m.distance_to_root == this->distance_from_root_bridge && m.Bj < this->bridge_id)) && (this->port_status[m.lan] != "RP") && (this->port_status[m.lan] != "NP")&& (this->root_bridge_id == m.Bi)
