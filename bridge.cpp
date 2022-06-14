@@ -79,15 +79,6 @@ bool bridge::receive(configMessage m)
             this->root_lan = m.lan;                                   //setting the root lan
             this->sending_bridge_id = m.Bj;
 
-
-            // std::cout<<"message: "<<m.Bi<<" "<<m.Bj<<" "<<m.Bk<<" "<<m.distance_to_root<<std::endl;
-            // std::cout<<"bridge: "<<this->bridge_id<<" "<<this->distance_from_root_bridge<<" "<<this->root_bridge_id<<" "<<this->sending_bridge_id<<" "<<this->root_lan<<std::endl;
-            // std::cout<<std::endl;
-
-
-
-
-
             return true; //updated
         }
         else
