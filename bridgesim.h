@@ -10,20 +10,6 @@ public:
     std::map<int, std::vector<int>> lan_bridge_map;
     std::map<int, std::vector<int>> bridge_lan_map;
 
-    // bridgesim(int trace, std::vector<bridge> all_bridges, std::map<int, std::vector<int>> lan_bridge_map, std::map<int, std::vector<int>> bridge_lan_map)
-    // {
-    //     this->trace = true;
-    //     if (trace == 0)
-    //     {
-    //         this->trace = false;
-    //     }
-
-    //     this->all_bridges = all_bridges;
-
-    //     this->lan_bridge_map = lan_bridge_map;
-    //     this->bridge_lan_map = bridge_lan_map;
-    // }
-
     bridgesim(int trace, std::map<int, std::vector<int>> lan_bridge_map, std::map<int, std::vector<int>> bridge_lan_map)
     {
         if (trace == 1)
