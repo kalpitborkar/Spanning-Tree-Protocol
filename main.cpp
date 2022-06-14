@@ -69,28 +69,6 @@ int main()
     int trace_flag = atoi(str_trace_flag.c_str());
     int number_of_bridges = atoi(str_number_of_bridges.c_str());
 
-    // for (int i = 0; i < number_of_bridges; i++)
-    // {
-    //     std::vector<std::string> temp;
-    //     std::string current_line;
-    //     std::getline(std::cin, current_line);
-
-    //     std::istringstream iss(current_line);
-    //     for (std::string current_line; iss >> current_line;)
-    //     {
-    //         temp.push_back(current_line);
-    //     }
-
-    //  // int current_bridge_id = atoi( temp[0].substr(1,temp[0].size()-2).c_str());
-
-    //     for (int j = 1; j < temp.size(); j++)
-    //     {
-    //         int temp_letter_to_int = letter_to_int(temp[j]);
-    //         bridge_lan_map[atoi(temp[0].substr(1, temp[0].size() - 2).c_str())].push_back(temp_letter_to_int);
-    //         lan_bridge_map[temp_letter_to_int].push_back(atoi(temp[0].substr(1, temp[0].size() - 2).c_str()));
-    //     }
-    // }
-
     for (int i = 0; i <= number_of_bridges; i++)
     {
         std::string current_line;
